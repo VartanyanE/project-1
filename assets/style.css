@@ -1,0 +1,27 @@
+body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+h1 {
+  grid-column: 1/4;
+  grid-row: 1;
+  background-color: coral;
+  text-align: center;
+}
+
+.main-content {
+  grid-column: 2/4;
+  grid-row: 2;
+}
+
+.money-input {
+  width: 30vw;
+  height: 30px;
+}
+
+.location-input {
+  width: 30vw;
+  height: 30px;
+}
