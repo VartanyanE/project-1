@@ -1,65 +1,168 @@
-              /* CSS */
-          
-          body {
-              display: grid;
-              grid-template-columns: 1fr 1fr 1fr;
-              grid-template-rows: 1fr 1fr;
-              grid-gap: 5px;
-          }
-          
-          h1 {
-              grid-column: 1/4;
-              grid-row: 1;
-              background-color: rgb(177, 177, 177);
-              text-align: center;
-              align-self: center;
-              height: 100px;
-              margin-top: -1.7vh;
-              margin-left: -1.8vh;
-              margin-right: -1.8vh;
-              padding-top: 54px;
-              font-family: sans-serif;
-              font-size: 45px;
-              color: white;
-          }
-          
-          hr {
-              grid-column: 1/4;
-              grid-row: 2;
-          }
-          
-          .main-content {
-              grid-column: 2/4;
-              grid-row: 2;
-          }
-          
-          .money-input {
-              width: 30vw;
-              height: 30px;
-              border-left: 10px solid rgb(133, 133, 133);
-              border-radius: 8px;
-              border-color: rgb(133, 133, 133);
-              border-style: solid;
-              padding-left: 10px;
-          }
-          
-          .money-input:focus {
-              outline: none;
-              border: 1px solid rgb(109, 106, 105);
-              box-shadow: 0 0 6px rgb(175, 188, 207);
-          }
-          
-          .location-input {
-              width: 30vw;
-              height: 30px;
-              border-left: 10px solid rgb(133, 133, 133);
-              border-style: solid;
-              border-radius: 8px;
-              border-color: rgb(133, 133, 133);
-              padding-left: 10px;
-          }
-          
-          .location-input:focus {
-              outline: none;
-              border: 1px solid rgb(109, 106, 105);
-              box-shadow: 0 0 6px rgb(175, 188, 207);
+     /* CSS */
+     
+     body {
+         display: grid;
+         grid-template-columns: 1fr 1fr 1fr;
+         grid-template-rows: 1fr 1fr 1fr;
+         grid-gap: 5px;
+         overflow-x: hidden;
+     }
+     
+     .BFYB {
+         grid-column: 2/3;
+         grid-row: 1;
+         z-index: +1;
+         font-size: 100px;
+         text-align: center;
+         font-family: Arial, Helvetica, sans-serif;
+         line-height: 116px;
+         color: white;
+         text-shadow: 3px 0px rgb(80, 80, 102);
+     }
+     
+     .BFYB:first-letter {
+         color: rgb(68, 235, 90);
+     }
+     
+     h1 {
+         grid-column: 1/4;
+         grid-row: 1;
+         background-color: rgb(177, 177, 177);
+         text-align: center;
+         align-self: center;
+         height: 100px;
+         margin-top: -1.7vh;
+         margin-left: -1.8vh;
+         margin-right: -1.8vh;
+         padding-top: 54px;
+         font-family: sans-serif;
+         font-size: 26px;
+         color: rgb(109, 106, 105);
+         border-left: 100px solid rgb(109, 106, 105);
+         border-right: 100px solid rgb(177, 177, 177);
+         line-height: 133px;
+         padding-left: 8px;
+         box-shadow: 0 0 0 2px rgb(68, 235, 90);
+     }
+     
+     .upperbun {
+         grid-column: 1/4;
+         grid-row: 1;
+         background-color: white;
+         height: 15px;
+         border-top-right-radius: 20px;
+         border-top-left-radius: 20px;
+         width: 60px;
+         margin-top: 29px;
+         margin-left: 11px;
+         box-shadow: 0 0 9px rgb(255, 255, 255);
+     }
+     
+     .symbol {
+         grid-column: 1;
+         grid-row: 1;
+         font-family: fantasy;
+         font-size: 40px;
+         text-align: left;
+         padding: 14px;
+         margin-top: 31px;
+         margin-left: -6px;
+         color: rgb(68, 235, 90);
+         text-shadow: 2px 0 0 rgb(11, 73, 21);
+     }
+     
+     .lowerbun {
+         grid-column: 1/4;
+         grid-row: 1;
+         background-color: white;
+         height: 15px;
+         border-bottom-right-radius: 20px;
+         border-bottom-left-radius: 20px;
+         width: 60px;
+         margin-top: 94px;
+         margin-left: 11px;
+         box-shadow: 0 0 9px rgb(255, 255, 255);
+     }
+     
+     .main-content {
+         grid-column: 2/3;
+         grid-row: 2;
+     }
+     
+     .money-input {
+         width: 30vw;
+         height: 30px;
+         min-width: 250px;
+         border-left: 20px solid rgb(133, 133, 133);
+         border-radius: 8px;
+         border-color: rgb(133, 133, 133);
+         border-style: solid;
+         padding-left: 10px;
+     }
+     
+     .money-input:hover {
+         border-color: rgb(68, 235, 90);
+     }
+     
+     .money-input:focus {
+         outline: none;
+         border: 2px solid rgb(68, 235, 90);
+         box-shadow: 0 0 7px rgb(175, 188, 207);
+         border-right: 40px solid rgb(68, 235, 90);
+         width: 33vw;
+         height: 33px;
+     }
+     
+     .location-input {
+         width: 30vw;
+         height: 30px;
+         min-width: 250px;
+         border-left: 20px solid rgb(133, 133, 133);
+         border-style: solid;
+         border-radius: 8px;
+         border-color: rgb(133, 133, 133);
+         padding-left: 10px;
+     }
+     
+     .location-input:hover {
+         border-color: rgb(68, 235, 90);
+     }
+     
+     .location-input:focus {
+         outline: none;
+         border: 2px solid rgb(68, 235, 90);
+         border-right: 40px solid rgb(68, 235, 90);
+         box-shadow: 0 0 6px rgb(175, 188, 207);
+         width: 33vw;
+         height: 33px;
+     }
+     
+     .btn {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         grid-template-rows: 1fr;
+         grid-column: 2/3;
+         grid-row: 2;
+         text-align: center;
+         margin: auto;
+         width: 100px;
+         height: 35px;
+         align-items: center;
+         border: none;
+         border-radius: 8px;
+         background-color: rgb(177, 177, 177);
+         color: white;
+         font-size: 18px;
+         cursor: pointer;
+         box-shadow: 0 7px rgb(80, 80, 102);
+     }
+     
+     .btn:hover {
+         background-color: rgb(68, 235, 90);
+     }
+     
+     .btn:active {
+         background-color: rgb(68, 235, 90);
+         box-shadow: 0 5px rgb(34, 33, 33);
+         transform: translateY(4px);
+     }
