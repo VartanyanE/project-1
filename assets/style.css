@@ -31,7 +31,7 @@
          text-align: center;
          align-self: center;
          height: 100px;
-         margin-top: -1.7vh;
+         margin-top: -3.5vh;
          margin-left: -1.8vh;
          margin-right: -1.8vh;
          padding-top: 54px;
@@ -90,7 +90,7 @@
      }
      
      .money-input {
-         width: 30vw;
+         width: 33vw;
          height: 30px;
          min-width: 250px;
          border-left: 20px solid rgb(133, 133, 133);
@@ -98,6 +98,7 @@
          border-color: rgb(133, 133, 133);
          border-style: solid;
          padding-left: 10px;
+         border: 1px solid;
      }
      
      .money-input:hover {
@@ -106,35 +107,66 @@
      
      .money-input:focus {
          outline: none;
-         border: 2px solid rgb(68, 235, 90);
-         box-shadow: 0 0 7px rgb(175, 188, 207);
+         border: 1px solid rgb(68, 235, 90);
+         box-shadow: 0 0 8px rgb(175, 188, 207);
          border-right: 40px solid rgb(68, 235, 90);
-         width: 33vw;
+         border-bottom: 2px solid rgb(68, 235, 90);
          height: 33px;
      }
      
-     .location-input {
-         width: 30vw;
-         height: 30px;
-         min-width: 250px;
-         border-left: 20px solid rgb(133, 133, 133);
-         border-style: solid;
+     .box {
+         display: grid;
+         grid-template-columns: 1fr 3fr 3fr 1fr;
+         grid-template-rows: 1fr;
+         -webkit-appearance: none;
+         -ms-appearance: none;
+         position: relative;
+         display: flex;
+         overflow: hidden;
+         min-width: 300px;
+         border-bottom: 2px solid rgb(177, 177, 177);
          border-radius: 8px;
-         border-color: rgb(133, 133, 133);
-         padding-left: 10px;
      }
      
-     .location-input:hover {
-         border-color: rgb(68, 235, 90);
-     }
-     
-     .location-input:focus {
-         outline: none;
-         border: 2px solid rgb(68, 235, 90);
-         border-right: 40px solid rgb(68, 235, 90);
-         box-shadow: 0 0 6px rgb(175, 188, 207);
-         width: 33vw;
+     .box select {
+         grid-column: 2/4;
+         grid-row: 2;
+         text-align: center;
+         background-color: rgb(68, 235, 90);
+         color: white;
          height: 33px;
+         padding: 6px;
+         border-radius: 8px;
+         border: none;
+         font-size: 15px;
+         outline: none;
+         cursor: pointer;
+         min-width: 200px;
+     }
+     
+     select {
+         flex: 1;
+         padding: 0 .5em;
+         outline: none;
+     }
+     
+     .box::after {
+         content: '\25BC';
+         line-height: 38px;
+         padding: 0px 1em;
+         top: 0;
+         right: 0;
+         position: absolute;
+         background: rgb(177, 177, 177);
+         color: rgb(255, 255, 255);
+         height: 33px;
+         cursor: pointer;
+         pointer-events: none;
+         -webkit-transition: .25s all ease;
+         -o-transition: .25s all ease;
+         transition: .25s all ease;
+         align-items: center;
+         text-align: center;
      }
      
      .btn {
@@ -154,15 +186,22 @@
          color: white;
          font-size: 18px;
          cursor: pointer;
-         box-shadow: 0 7px rgb(80, 80, 102);
+         border-bottom: 2px solid rgb(226, 226, 226);
+         box-shadow: 0 5px rgb(80, 80, 102);
+         outline: none;
+     }
+     
+     .box:hover::after {
+         color: rgb(0, 0, 0);
+         outline: none;
      }
      
      .btn:hover {
-         background-color: rgb(68, 235, 90);
+         background-color: rgb(54, 253, 81);
      }
      
      .btn:active {
          background-color: rgb(68, 235, 90);
-         box-shadow: 0 5px rgb(34, 33, 33);
+         box-shadow: 0 2px rgb(61, 58, 58);
          transform: translateY(4px);
      }
