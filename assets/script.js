@@ -1,22 +1,36 @@
-$(document).ready(function() {
-    //   $.ajax({
-    //     url: queryURL,
-    //     method: "GET"
-    //   })
-    //     .then(function (response) {
-    //       console.log("Hello There");
-    //     });
-    // });
+
+var x;
+var y;
+
+$(document).ready(function () {
+    var ApiKey = "490204d27c988ccb9e991f177de168ad";
+    var requestURL = "https://developers.zomato.com/api/v2.1/geocode";
+
+
 
     if ("geolocation" in navigator) {
 
-        navigator.geolocation.getCurrentPosition(function(position) {
-            console.log(position.coords)
-
+        navigator.geolocation.getCurrentPosition(function (position) {
+            // console.log(position);
+            // console.log(position.coords.latitude);
+            // console.log(position.coords.longitude);
+            x = position.coords.latitude;
+            y = position.coords.longitude;
         });
     } else {
         console.log("doesn't work")
     }
+
+
+
+
+
+    $.ajax(requestURL + "?api-key=" + ApiKey + "&lat=" + lat + "&lon=" + lon,
+        {
+            method: "GET",
+            success: geoLoc,
+        }
+
 
 
     // // /Example
