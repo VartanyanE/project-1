@@ -31,7 +31,7 @@
          text-align: center;
          align-self: center;
          height: 100px;
-         margin-top: -3.5vh;
+         margin-top: -1.7vh;
          margin-left: -1.8vh;
          margin-right: -1.8vh;
          padding-top: 54px;
@@ -54,7 +54,7 @@
          border-top-left-radius: 20px;
          width: 60px;
          margin-top: 29px;
-         margin-left: 11px;
+         margin-left: 10px;
          box-shadow: 0 0 9px rgb(255, 255, 255);
      }
      
@@ -66,9 +66,8 @@
          text-align: left;
          padding: 14px;
          margin-top: 31px;
-         margin-left: -6px;
+         margin-left: -7px;
          color: rgb(68, 235, 90);
-         text-shadow: 2px 0 0 rgb(11, 73, 21);
      }
      
      .lowerbun {
@@ -80,7 +79,7 @@
          border-bottom-left-radius: 20px;
          width: 60px;
          margin-top: 94px;
-         margin-left: 11px;
+         margin-left: 10px;
          box-shadow: 0 0 9px rgb(255, 255, 255);
      }
      
@@ -98,6 +97,7 @@
          border-color: rgb(133, 133, 133);
          border-style: solid;
          padding-left: 10px;
+         padding-right: 10px;
          border: 1px solid;
      }
      
@@ -109,64 +109,8 @@
          outline: none;
          border: 1px solid rgb(68, 235, 90);
          box-shadow: 0 0 8px rgb(175, 188, 207);
-         border-right: 40px solid rgb(68, 235, 90);
          border-bottom: 2px solid rgb(68, 235, 90);
          height: 33px;
-     }
-     
-     .box {
-         display: grid;
-         grid-template-columns: 1fr 3fr 3fr 1fr;
-         grid-template-rows: 1fr;
-         -webkit-appearance: none;
-         -ms-appearance: none;
-         position: relative;
-         display: flex;
-         overflow: hidden;
-         min-width: 300px;
-         border-bottom: 2px solid rgb(177, 177, 177);
-         border-radius: 8px;
-     }
-     
-     .box select {
-         grid-column: 2/4;
-         grid-row: 2;
-         text-align: center;
-         background-color: rgb(68, 235, 90);
-         color: white;
-         height: 33px;
-         padding: 6px;
-         border-radius: 8px;
-         border: none;
-         font-size: 15px;
-         outline: none;
-         cursor: pointer;
-         min-width: 200px;
-     }
-     
-     select {
-         flex: 1;
-         padding: 0 .5em;
-         outline: none;
-     }
-     
-     .box::after {
-         content: '\25BC';
-         line-height: 38px;
-         padding: 0px 1em;
-         top: 0;
-         right: 0;
-         position: absolute;
-         background: rgb(177, 177, 177);
-         color: rgb(255, 255, 255);
-         height: 33px;
-         cursor: pointer;
-         pointer-events: none;
-         -webkit-transition: .25s all ease;
-         -o-transition: .25s all ease;
-         transition: .25s all ease;
-         align-items: center;
-         text-align: center;
      }
      
      .btn {
@@ -192,7 +136,7 @@
      }
      
      .box:hover::after {
-         color: rgb(0, 0, 0);
+         color: rgb(49, 48, 48);
          outline: none;
      }
      
