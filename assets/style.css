@@ -97,6 +97,7 @@
          border-color: rgb(133, 133, 133);
          border-style: solid;
          padding-left: 10px;
+         padding-right: 10px;
          border: 1px solid;
      }
      
@@ -108,7 +109,6 @@
          outline: none;
          border: 1px solid rgb(68, 235, 90);
          box-shadow: 0 0 8px rgb(175, 188, 207);
-         border-right: 40px solid rgb(68, 235, 90);
          border-bottom: 2px solid rgb(68, 235, 90);
          height: 33px;
      }
