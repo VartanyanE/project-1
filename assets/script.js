@@ -29,8 +29,19 @@ $(document).ready(function () {
             });
     }
 
-    function geoLoc(response) {
-        console.log(response);
+    function geoLoc(data) {
+        console.log(data);
+        var restaurants = [data.nearby_restaurants[0].restaurant.name, data.nearby_restaurants[1].restaurant.name, data.nearby_restaurants[2].restaurant.name, data.nearby_restaurants[3].restaurant.name, data.nearby_restaurants[4].restaurant.name,
+        data.nearby_restaurants[5].restaurant.name, data.nearby_restaurants[6].restaurant.name, data.nearby_restaurants[7].restaurant.name, data.nearby_restaurants[8].restaurant.name];
+
+        // console.log(restaurants);
+        for (let i = 0; i < restaurants.length; i++) {
+            var name = $('<h5>');
+            name.text(restaurants[i]);
+            $('#name').append(name);
+            console.log(restaurants[i]);
+        }
+
     }
 
 });
