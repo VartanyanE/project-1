@@ -1,9 +1,9 @@
-$(document).ready(function() {
+$(document).ready(function () {
     var ApiKey = "490204d27c988ccb9e991f177de168ad";
     var requestURL = "https://developers.zomato.com/api/v2.1/geocode";
 
 
-    $('#money-btn').click(function() {
+    $('#money-btn').click(function () {
 
         var money = $('#money').val();
 
@@ -12,7 +12,7 @@ $(document).ready(function() {
 
             if ("geolocation" in navigator) {
 
-                navigator.geolocation.getCurrentPosition(function(position) {
+                navigator.geolocation.getCurrentPosition(function (position) {
 
                     x = position.coords.latitude;
                     y = position.coords.longitude;
@@ -33,8 +33,11 @@ $(document).ready(function() {
                 });
             }
 
-            function geoLoc(response) {
-                console.log(response);
+            function geoLoc(data) {
+                data.nearby_restaurants.forEach(function (x) {
+                    var name = x.restaurant.name;
+                    console.log(name);
+                })
             }
         }
     })
