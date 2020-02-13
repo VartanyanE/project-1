@@ -33,8 +33,11 @@ $(document).ready(function () {
                 });
             }
 
-            function geoLoc(response) {
-                console.log(response);
+            function geoLoc(data) {
+                data.nearby_restaurants.forEach(function (x) {
+                    var name = x.restaurant.name;
+                    console.log(name);
+                })
             }
         }
     })
