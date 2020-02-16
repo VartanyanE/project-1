@@ -1,7 +1,7 @@
 $("#submit-btn").click(function () {
     // var ApiKey = "490204d27c988ccb9e991f177de168ad";
     // var requestURL = "https://developers.zomato.com/api/v2.1/geocode";
-    var yelpUrl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search";
+    var yelpUrl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=food";
 
     if ("geolocation" in navigator) {
 
@@ -20,7 +20,7 @@ $("#submit-btn").click(function () {
 
     function yelpLocation(x, y) {
 
-        $.ajax(yelpUrl + "?latitude=" + x + "&longitude=" + y,
+        $.ajax(yelpUrl + "&latitude=" + x + "&longitude=" + y,
             {
 
                 headers: {
