@@ -22,7 +22,7 @@
 }
 
 @media (max-width: 399px) {
-    .foodRadar{
+    .foodRadar {
         font-size: 48px;
     }
 }
@@ -32,7 +32,7 @@
     border-bottom: 7px solid rgb(68, 235, 90);
 }
 
-#submit-btn{
+#submit-btn {
     border: none;
     border-radius: 8px;
     background-color: rgb(177, 177, 177);
@@ -43,76 +43,84 @@
     box-shadow: 0 5px rgb(80, 80, 102);
     outline: none;
 }
+
 #submit-btn:active {
     background-color: rgb(68, 235, 90);
     box-shadow: 0 2px rgb(61, 58, 58);
     transform: translateY(4px);
 }
 
-#main-content{
+#main-content {
     margin-top: 10px;
 }
 
 .card {
     /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
-  }
-  .card>img{
-      width: 100%;
-  }
-  
-  /* On mouse-over, add a deeper shadow */
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-  
-  /* Add some padding inside the card container */
-  .card-container {
-    padding: 2px 16px;
-  }
+}
 
- #main-radar{
-     display:inline-block;
- }
-  
- .half-circle-spinner,
- .half-circle-spinner * {
-     box-sizing: border-box;
- }
- 
- .half-circle-spinner {
-     width: 60px;
-     height: 60px;
-     border-radius: 100%;
-     position: relative;
-     margin: 0 auto;
- }
- 
- .half-circle-spinner .circle {
-     content: "";
-     position: absolute;
-     width: 80%;
-     height: 80%;
-     border-radius: 100%;
-     border: calc(60px / 10) solid transparent;
- }
- 
- .half-circle-spinner .circle.circle-1 {
-     border-top-color: rgb(68, 235, 90);
-     animation: half-circle-spinner-animation 1s infinite;
- }
- 
- .half-circle-spinner .circle.circle-2 {
-     border-bottom-color: rgb(68, 235, 90);
-     animation: half-circle-spinner-animation 1s infinite alternate;
- }
- 
- @keyframes half-circle-spinner-animation {
-     0% {
-         transform: rotate(0deg);
-     }
-     100% {
-         transform: rotate(360deg);
-     }
- }
+.card>img {
+    width: 100%;
+}
+
+/* On mouse-over, add a deeper shadow */
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Add some padding inside the card container */
+
+.card-container {
+    padding: 2px 16px;
+}
+
+#main-radar {
+    display: inline-block;
+}
+
+.half-circle-spinner, .half-circle-spinner * {
+    box-sizing: border-box;
+}
+
+.half-circle-spinner {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.half-circle-spinner .circle {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    border-radius: 100%;
+    border: calc(60px / 10) solid transparent;
+}
+
+.half-circle-spinner .circle.circle-1 {
+    border-top-color: rgb(68, 235, 90);
+    animation: half-circle-spinner-animation 1s infinite;
+}
+
+.half-circle-spinner .circle.circle-2 {
+    border-bottom-color: rgb(68, 235, 90);
+    animation: half-circle-spinner-animation 1s infinite alternate;
+}
+
+@keyframes half-circle-spinner-animation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#logo {
+    height: 30px;
+    width: 30px;
+}
