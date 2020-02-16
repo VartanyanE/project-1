@@ -58,13 +58,18 @@ function yelpCall(yelpData) {
             var $card = $('<div>');
             $card.addClass("card");
             var $img = $('<img>');
+            var $link = $('<img>');
+            $link.attr("src", "./assets/burst_icon@2x.png");
 
+            $link.attr("id", "logo");
 
             $img.attr("src", business.image_url);
             $img.attr("alt", business.name);
 
             $card.append($img);
-            $img.on('click', function () {
+
+            $img.on('click', function (e) {
+                e.preventDefault();
                 window.location.href = business.url;
             });
 
@@ -78,11 +83,15 @@ function yelpCall(yelpData) {
             $address.append(location.address1);
             var address2 = (location.city + ", " + location.state + " " + location.zip_code);
             $address.append('<br>');
+
             $address.append(address2);
+
             $card.append($address);
+            $card.append($link);
 
             $col.html($card);
             $row.append($col);
+
         });
         $results.append($row);
     });
