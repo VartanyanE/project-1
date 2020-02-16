@@ -1,55 +1,7 @@
-
-$(document).ready(function() {
-
-    var requestURL = "https://developers.zomato.com/api/v2.1/geocode";
-
-
-
-
-    if ("geolocation" in navigator) {
-
-        navigator.geolocation.getCurrentPosition(function(position) {
-
-            x = position.coords.latitude;
-            y = position.coords.longitude;
-            ajaxCall(x, y);
-=======
-$(document).ready(function () {
+$("#submit-btn").click(function () {
     // var ApiKey = "490204d27c988ccb9e991f177de168ad";
     // var requestURL = "https://developers.zomato.com/api/v2.1/geocode";
     var yelpUrl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search";
-
-
-    // $('#money-btn').click(function () {
-
-    //     var money = $('#money').val();
-
-    //     if (money <= '25.00') {
-
-    //         if (money <= 25.00) {
-
-    //             if (money > 26.00, 26) {
-
-    //                 var modal = document.getElementById("myModal");
-
-    //                 var btn = document.getElementById('money-btn');
-
-    //                 var span = document.getElementsByClassName("close")[0];
-
-    //                 btn.onclick = function () {
-    //                     modal.style.display = "block";
-    //                 }
-
-    //                 span.onclick = function () {
-    //                     modal.style.display = "none";
-    //                 }
-
-    //                 window.onclick = function (event) {
-    //                     if (event.target == modal) {
-    //                         modal.style.display = "none";
-    //                     }
-    //                 }
-    //             }
 
     if ("geolocation" in navigator) {
 
@@ -65,25 +17,6 @@ $(document).ready(function () {
         console.log("doesn't work")
     }
 
-    function ajaxCall(x, y) {
-
-        $.ajax(requestURL + "?lat=" + x + "&lon=" + y, {
-            type: "GET",
-            success: geoLoc,
-            headers: {
-                "user-key": "490204d27c988ccb9e991f177de168ad"
-            }
-        });
-    }
-
-    function geoLoc(data) {
-        data.nearby_restaurants.forEach(function(x) {
-            var name = x.restaurant.name;
-            console.log(name);
-        })
-    }
-=======
-
 
     function yelpLocation(x, y) {
 
@@ -92,7 +25,7 @@ $(document).ready(function () {
 
                 headers: {
                     Authorization:
-                        "Bearer GGKInxcrN9s2C6wXxP4rKWkvrs_86igKC3pHY69hh8Odjb8DNWW3YeVzLZccB-hynav7Ac-vE1bqPnAKRCa6y1QNHT10XIjOXfGsxsA7SdZ3L88CoX_6SFKjk9FEXnYx"
+                        "Bearer y9ss5NF_aALqyqZ6T5XUvxnu3cPPlRQBBucLsGR_k0TVxhglsuLP0szHwxzHAIQ5VGBQlqknbSoxBlV440oZoAqFJhLyKoKSDaVKx_Yirpi6M5Nwa0I59RoEMY5IXnYx"
                 },
                 method: "GET",
                 success: yelpCall
@@ -100,49 +33,68 @@ $(document).ready(function () {
             });
     }
 
+    function chunk(arr, size) {
+        var newArr = [];
+        for (var i = 0; i < arr.length; i += size) {
+            newArr.push(arr.slice(i, i + size));
+        }
+        return newArr;
+    }
 
     function yelpCall(yelpData) {
         console.log(yelpData);
-        yelpData.businesses.forEach(function (arrayData) {
-            var name = $('<div>');
-            name.addClass('name');
-            // name.attr('data-id', arrayData.id);
-            name.text(arrayData.name + ' has a ' + arrayData.rating + ' star rating');
+        var $results = $('#showResults');
+        $results.html("");
+        var businesses = chunk(yelpData.businesses, 3);
+        console.log(businesses);
+        businesses.forEach(function (row) {
+            var $row = $('<div>');
+            $row.addClass('row');
+            row.forEach(function(business) {
+                console.log(business);
+                var $col = $('<div>');
+                $col.addClass('four columns');
+                
+                var $card = $('<div>');
+                $card.addClass("card");
+                var $img = $('<img>');
+                $img.attr("src", business.image_url); 
+                $img.attr("alt", business.name);
+                $card.append($img);
 
-            var image = $('<img>');
-            image.addClass("image");
-            image.attr("src", arrayData.image_url);
-            $('#showResults').append(name, image);
+                var $name =$('<strong>');
+                $name.text(business.name);
+                $card.append($name);
 
-        })
+                var location = business.location;
+                var $address=$('<p>');
+                $address.append(location.address1);
+                var address2 = (location.city + " " + location.state + " " + location.zip_code);
+                $address.append('<br>');
+                $address.append(address2);
+                $card.append($address);
+
+                $col.html($card);
+                $row.append($col);
+            });
+            $results.append($row);
+        });
+
+        // yelpData.businesses.forEach(function (arrayData) {
+
+            // var name = $('<div>');
+            // name.addClass('name');
+            // // name.attr('data-id', arrayData.id);
+            // name.text(arrayData.name + ' has a ' + arrayData.rating + ' star rating');
+
+            // var image = $('<img>');
+            // image.addClass("image");
+            // image.attr("src", arrayData.image_url);
+            // $('#showResults').append(name, image);
+
+        // })
 
 
     }
-    // function ajaxCall(x, y) {
-
-    //     $.ajax(requestURL + "?lat=" + x + "&lon=" + y,
-    //         {
-    //             type: "GET",
-    //             success: geoLoc,
-    //             headers: {
-    //                 "user-key": "490204d27c988ccb9e991f177de168ad"
-    //             }
-    //         });
-    // }
-
-    // function geoLoc(data) {
-    //     data.nearby_restaurants.forEach(function (x, ind, arr) {
-
-
-    //         var name = $('<div>');
-    //         name.addClass('name');
-    //         name.attr('data-id', x.restaurant.id);
-    //         name.text(x.restaurant.name);
-    //         $('#showResults').append(name);
-    //     })
-    // }
-    // }
-    //         }
-    //     })
 
 });
