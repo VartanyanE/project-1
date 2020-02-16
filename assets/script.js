@@ -1,7 +1,7 @@
 $(document).ready(function () {
     // var ApiKey = "490204d27c988ccb9e991f177de168ad";
     // var requestURL = "https://developers.zomato.com/api/v2.1/geocode";
-    var yelpUrl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search";
+    var yelpUrl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=food";
 
 
     // $('#money-btn').click(function () {
@@ -52,7 +52,7 @@ $(document).ready(function () {
 
     function yelpLocation(x, y) {
 
-        $.ajax(yelpUrl + "?latitude=" + x + "&longitude=" + y,
+        $.ajax(yelpUrl + "&latitude=" + x + "&longitude=" + y,
             {
 
                 headers: {
@@ -70,6 +70,9 @@ $(document).ready(function () {
         console.log(yelpData);
         yelpData.businesses.forEach(function (arrayData) {
             var name = $('<div>');
+            var link = $("<a></a>");
+            var showResults = $('#showResults');
+            link.attr("href", arrayData.url);
             name.addClass('name');
             // name.attr('data-id', arrayData.id);
             name.text(arrayData.name + ' has a ' + arrayData.rating + ' star rating');
@@ -77,7 +80,10 @@ $(document).ready(function () {
             var image = $('<img>');
             image.addClass("image");
             image.attr("src", arrayData.image_url);
-            $('#showResults').append(name, image);
+            image.attr("href", arrayData.url);
+            $('.image').append(link);
+            $(showResults).append(image, name, link);
+
 
         })
 
