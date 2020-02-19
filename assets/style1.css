@@ -235,7 +235,26 @@ body {
     border-bottom: 15px solid rgb(68, 235, 90);
 }
 
+.modal-content1 {
+    background-color: rgb(255, 255, 255);
+    margin: 15% auto;
+    padding: 20px;
+    width: 70%;
+    height: 30%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 9px 2px rgb(209, 209, 209);
+    border-bottom: 15px solid rgb(68, 235, 90);
+}
+
 .close {
+    color: #aaa;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: -21px;
+}
+
+.close1 {
     color: #aaa;
     float: right;
     font-size: 30px;
@@ -248,6 +267,12 @@ body {
     text-decoration: none;
     cursor: pointer;
 }
+
+
+.close1:hover, .close1:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 
 #topButton {
     display: none;
@@ -270,4 +295,5 @@ body {
 
 #topButton:hover {
     background-color: rgb(151, 150, 150);
+
 }
