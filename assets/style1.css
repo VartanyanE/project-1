@@ -268,8 +268,32 @@ body {
     cursor: pointer;
 }
 
+
 .close1:hover, .close1:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
+
+#topButton {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 8px;
+    z-index: 10;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: rgb(68, 235, 90);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 8px;
+    line-height: 10px;
+    border-bottom: 2px solid rgb(163, 255, 175);
+    box-shadow: 0px 2px 6px 2px rgb(207, 207, 207)
+}
+
+#topButton:hover {
+    background-color: rgb(151, 150, 150);
+
 }
