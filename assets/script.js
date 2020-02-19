@@ -1,24 +1,16 @@
 $("#submit-btn").click(function () {
-
-
-    // The URL for the yelp API
+    // var ApiKey = "490204d27c988ccb9e991f177de168ad";
+    // var requestURL = "https://developers.zomato.com/api/v2.1/geocode";
     var yelpUrl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=food";
-
-    //  Geolocation API
     if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(function (position) {
-            // Storing the current latitude and longitude in variables
-
             x = position.coords.latitude;
             y = position.coords.longitude;
-            //Calling the function that makes the AJAX call for the Yelp API and passing the lat and lon variables
             yelpLocation(x, y)
         });
     } else {
         console.log("doesn't work")
     }
-
-    // Ajax call for the Yelp API, it takes the latitude and longitude as parameters
     function yelpLocation(x, y) {
         $.ajax(yelpUrl + "&latitude=" + x + "&longitude=" + y, {
             headers: {
@@ -28,8 +20,6 @@ $("#submit-btn").click(function () {
             success: yelpCall
         });
     }
-
-    // Function that will let us determine how many results we want to display per row
     function chunk(arr, size) {
         var newArr = [];
         for (var i = 0; i < arr.length; i += size) {
@@ -37,8 +27,6 @@ $("#submit-btn").click(function () {
         }
         return newArr;
     }
-
-    // Function that renders our results
     function yelpCall(yelpData) {
         console.log(yelpData);
         var $results = $('#showResults');
@@ -49,6 +37,7 @@ $("#submit-btn").click(function () {
             var $row = $('<div>');
             $row.addClass('row');
             row.forEach(function (business) {
+                // console.log(business);
                 var $col = $('<div>');
                 $col.addClass('four columns');
                 var $card = $('<div>');
@@ -64,10 +53,6 @@ $("#submit-btn").click(function () {
                     e.preventDefault();
                     window.location.href = business.url;
                 });
-                $link.on('click', function (e) {
-                    e.preventDefault();
-                    window.location.href = "https://www.yelp.com"
-                })
                 var $name = $('<strong>');
                 $name.text(business.name);
                 $card.append($name);
@@ -84,6 +69,30 @@ $("#submit-btn").click(function () {
             });
             $results.append($row);
         });
-
+        // yelpData.businesses.forEach(function (arrayData) {
+        // var name = $('<div>');
+        // name.addClass('name');
+        // // name.attr('data-id', arrayData.id);
+        // name.text(arrayData.name + ' has a ' + arrayData.rating + ' star rating');
+        // var image = $('<img>');
+        // image.addClass("image");
+        // image.attr("src", arrayData.image_url);
+        // $('#showResults').append(name, image);
+        // })
     }
 });
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("modalBtn");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function () {
+    modal.style.display = "block";
+}
+span.onclick = function () {
+    modal.style.display = "none";
+}
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
