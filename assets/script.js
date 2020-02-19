@@ -2,6 +2,7 @@ $("#submit-btn").click(function () {
     // var ApiKey = "490204d27c988ccb9e991f177de168ad";
     // var requestURL = "https://developers.zomato.com/api/v2.1/geocode";
     var yelpUrl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=food";
+
     if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(function (position) {
             x = position.coords.latitude;
@@ -51,8 +52,14 @@ $("#submit-btn").click(function () {
                 $card.append($img);
                 $img.on('click', function (e) {
                     e.preventDefault();
-                    window.location.href = business.url;
+                    modal1.style.display = "block";
+                    $('#submit-btn1').on('click', function () {
+                        window.location.href = business.url;
+                    })
                 });
+
+
+
                 var $name = $('<strong>');
                 $name.text(business.name);
                 $card.append($name);
@@ -83,16 +90,31 @@ $("#submit-btn").click(function () {
 });
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("modalBtn");
+
+var modal1 = document.getElementById("myModal1");
 var span = document.getElementsByClassName("close")[0];
+var span1 = document.getElementsByClassName("close1")[0];
 btn.onclick = function () {
     modal.style.display = "block";
 }
+
+
 span.onclick = function () {
     modal.style.display = "none";
+}
+
+span1.onclick = function () {
+    modal1.style.display = "none";
 }
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
 }
+window.onclick = function (event) {
+    if (event.target == modal1) {
+        modal1.style.display = "none";
+    }
+}
+
 
