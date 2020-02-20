@@ -1,71 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+    />
     <link rel="stylesheet" href="./assets/style1.css" />
     <title>Food Radar</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Header -->
     <header id="header-container">
-        <div class="container">
-            <div class="row">
-                <div class="twelve columns">
-                    <div class="foodRadar text-center">
-                        FoodRadar
-                        <div id="main-radar">
-                            <div class="half-circle-spinner">
-                                <div class="circle circle-1"></div>
-                                <div class="circle circle-2"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="findFood text-center">Find Local Delicious Food</div>
+      <div class="container">
+        <div class="row">
+          <div class="twelve columns">
+            <div class="foodRadar text-center">
+              FoodRadar
+              <div id="main-radar">
+                <div class="half-circle-spinner">
+                  <div class="circle circle-1"></div>
+                  <div class="circle circle-2"></div>
                 </div>
+              </div>
             </div>
+            <div class="findFood text-center">Find Local Delicious Food</div>
+          </div>
         </div>
+      </div>
     </header>
     <!--Main Content-->
     <div class="container" id="main-content">
-        <div class="row">
-            <div class="twelve columns ">
-                <div class="text-center">
-                    <button class="btn" id="submit-btn">Use Radar</button>
-                    <button class="btn" id="modalBtn">About</button>
-                </div>
-                <!--Results-->
-                <div class="Results" id="showResults"></div>
-            </div>
+      <div class="row">
+        <div class="twelve columns ">
+          <div class="text-center">
+            <button class="btn" id="submit-btn">Use Radar</button>
+            <button class="btn" id="modalBtn">About</button>
+          </div>
+          <!--Results-->
+          <div class="Results" id="showResults"></div>
         </div>
+      </div>
     </div>
     <div id="myModal" class="modal">
-        <!-- Modal -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Hello</p>
-        </div>
+      <!-- Modal -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p class="headlines">
+          Are you tired eating at the same corner deli everyday?
+          <br />
+
+          Do you feel as if that same corner deli is medicore and overpriced?
+          <br />
+
+          Don't settle for soggy sandwiches!
+          <br />
+        </p>
+        <p>
+          Welcome to Food Radar -- an interactive site which allows users to
+          find restaurants in their area. Food Radar uses your longitude and
+          lattitude to find the user's exact location, without the user havng to
+          enter a city name or zip code. When you choose to use the radar, local
+          restaurants in your area will be displayed with some basic
+          information. Users may choose to learn more about any of these local
+          spots by clicking anywhere on the restaurant's display box. By
+          clicking on one of these, the user is transported to yelp.com where he
+          or she can read reviews and make an informed decision about where to
+          eat.
+        </p>
+      </div>
     </div>
 
     <div id="myModal1" class="modal">
-        <!-- Modal -->
-        <div class="modal-content1">
-
-
-            <span class="close1">&times;</span>
-            <h5>WARNING YOU ARE ABOUT TO LEAVE THIS SITE AND GO TO YELP.COM</h5>
-            <button class="btn1" id="submit-btn1">Proceed</button>
-        </div>
+      <!-- Modal -->
+      <div class="modal-content1">
+        <span class="close1">&times;</span>
+        <h5>WARNING YOU ARE ABOUT TO LEAVE THIS SITE AND GO TO YELP.COM</h5>
+        <button class="btn1" id="submit-btn1">Proceed</button>
+      </div>
     </div>
 
-    <button onclick="topReturn()" id="topButton" title="Return To The Top">Top</button>
+    <button onclick="topReturn()" id="topButton" title="Return To The Top">
+      Top
+    </button>
 
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="assets/script.js"></script>
-</body>
-
+  </body>
 </html>
