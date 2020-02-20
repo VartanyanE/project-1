@@ -10,6 +10,7 @@ p {
 
 .headlines {
     font-size: 18px;
+    color: rgb(9, 134, 25);
 }
 
 .Results {
@@ -86,6 +87,7 @@ p {
     width: 100%;
     border-radius: 10px;
     cursor: pointer;
+    height: 30vh;
 }
 
 /* On mouse-over, add a deeper shadow */
