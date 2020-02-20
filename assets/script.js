@@ -134,3 +134,8 @@ function topReturn() {
     document.documentElement.scrollTop = 0;
 }
 
+$('.searchForm').on('submit', function (e) {
+    e.preventDefault();
+    console.log("worked");
+})
+
