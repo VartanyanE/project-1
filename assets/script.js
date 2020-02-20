@@ -54,7 +54,7 @@ $("#submit-btn").click(function () {
                     e.preventDefault();
                     modal1.style.display = "block";
                     $('#submit-btn1').on('click', function () {
-                        window.location.href = business.url;
+                        window.open(business.url, '_blank');
                     })
                 });
 
@@ -133,9 +133,85 @@ function topReturn() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+function chunk(arr, size) {
+    var newArr = [];
+    for (var i = 0; i < arr.length; i += size) {
+        newArr.push(arr.slice(i, i + size));
+    }
+    return newArr;
+}
 
 $('.searchForm').on('submit', function (e) {
+    var inputValue = $('#search').val().trim();
+    var searchUrl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=restaurants&location=";
     e.preventDefault();
-    console.log("worked");
+    console.log(inputValue);
+    $.ajax(searchUrl + inputValue, {
+        headers: {
+            Authorization: "Bearer y9ss5NF_aALqyqZ6T5XUvxnu3cPPlRQBBucLsGR_k0TVxhglsuLP0szHwxzHAIQ5VGBQlqknbSoxBlV440oZoAqFJhLyKoKSDaVKx_Yirpi6M5Nwa0I59RoEMY5IXnYx"
+        },
+        method: "GET",
+        success: yelpCallSearch
+    });
 })
 
+function yelpCallSearch(yelpData) {
+    console.log(yelpData);
+    var $results = $('#showResults');
+    $results.html("");
+    var businesses = chunk(yelpData.businesses, 3);
+    console.log(businesses);
+    businesses.forEach(function (row) {
+        var $row = $('<div>');
+        $row.addClass('row');
+        row.forEach(function (business) {
+            // console.log(business);
+            var $col = $('<div>');
+            $col.addClass('four columns');
+            var $card = $('<div>');
+            $card.addClass("card");
+            var $img = $('<img>');
+            var $link = $('<img>');
+            $link.attr("src", "./assets/burst_icon@2x.png");
+            $link.attr("id", "logo");
+            $img.attr("src", business.image_url);
+            $img.attr("alt", business.name);
+            $card.append($img);
+            $img.on('click', function (e) {
+                e.preventDefault();
+                modal1.style.display = "block";
+                $('#submit-btn1').on('click', function () {
+
+                    window.open(business.url, '_blank');
+                })
+            });
+
+
+
+            var $name = $('<strong>');
+            $name.text(business.name);
+            $card.append($name);
+            var location = business.location;
+            var $address = $('<p>');
+            $address.append(location.address1);
+            var address2 = (location.city + ", " + location.state + " " + location.zip_code);
+            $address.append('<br>');
+            $address.append(address2);
+            $card.append($address);
+            $card.append($link);
+            $col.html($card);
+            $row.append($col);
+        });
+        $results.append($row);
+    });
+    // yelpData.businesses.forEach(function (arrayData) {
+    // var name = $('<div>');
+    // name.addClass('name');
+    // // name.attr('data-id', arrayData.id);
+    // name.text(arrayData.name + ' has a ' + arrayData.rating + ' star rating');
+    // var image = $('<img>');
+    // image.addClass("image");
+    // image.attr("src", arrayData.image_url);
+    // $('#showResults').append(name, image);
+    // })
+}
