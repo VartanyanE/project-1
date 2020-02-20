@@ -56,12 +56,13 @@ p {
     border-bottom: 7px solid rgb(68, 235, 90);
     margin-top: -3.7vh;
     margin-left: -1.8vh;
-    margin-right: -1.8vh;
+    margin-right: -1.9vh;
 }
 
-.button, button {
+.button,
+button {
     margin-bottom: 1rem;
-    margin: 3px;
+    margin: 4px;
     border-radius: 10px;
     color: rgb(68, 235, 90);
     font-size: 15px;
@@ -87,8 +88,10 @@ p {
     width: 100%;
     border-radius: 10px;
     cursor: pointer;
-    height: 30vh;
+    object-fit: cover;
+    height: 50vh;
 }
+
 
 /* On mouse-over, add a deeper shadow */
 
@@ -99,6 +102,7 @@ p {
     -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
 }
+
 
 /* Add some padding inside the card container */
 
@@ -111,7 +115,8 @@ p {
     margin-bottom: -15px;
 }
 
-.half-circle-spinner, .half-circle-spinner * {
+.half-circle-spinner,
+.half-circle-spinner * {
     box-sizing: border-box;
 }
 
@@ -167,6 +172,7 @@ p {
 #logo {
     height: 30px;
     width: 30px;
+    float: initial;
 }
 
 @-webkit-keyframes swing {
@@ -238,7 +244,7 @@ p {
 
 .modal-content {
     background-color: rgb(255, 255, 255);
-    margin: 15% auto;
+    margin: 5px auto;
     padding: 20px;
     width: 70%;
     border-radius: 10px;
@@ -249,7 +255,7 @@ p {
 
 .modal-content1 {
     background-color: rgb(255, 255, 255);
-    margin: 15% auto;
+    margin: 5px auto;
     padding: 20px;
     width: 70%;
     height: 30%;
@@ -274,13 +280,15 @@ p {
     margin-top: -21px;
 }
 
-.close:hover, .close:focus {
+.close:hover,
+.close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
 }
 
-.close1:hover, .close1:focus {
+.close1:hover,
+.close1:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
@@ -309,9 +317,39 @@ p {
     background-color: rgb(151, 150, 150);
 }
 
-.searchBar {
-    margin-top: 5px;
-    color: rgb(68, 235, 90);
+#search.searchBar {
+    margin-top: 10px;
+    color: rgb(0, 0, 0);
     text-align: center;
-    width: 50vw;
+    width: 40vw;
+    font-size: 20px;
+    border-radius: 6px;
+    box-shadow: 0px 4px 6px 0px rgb(219, 219, 219);
+    outline: none;
+}
+
+#search.searchBar:hover {
+    border-radius: 50px;
+    transition: .6s ease;
+    outline: none;
+}
+
+#search.searchBar:focus {
+    height: 50px;
+    width: 60vw;
+    border-color: rgb(133, 133, 133);
+    border-bottom: 3px solid rgb(68, 235, 90);
+    outline: none;
+}
+
+#submit-btn1.btn1 {
+    text-align: center;
+    float: right;
+    margin-top: -7px;
+}
+
+h5 {
+    color: red;
+    font-size: 18px;
+    text-align: center;
 }
