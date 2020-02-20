@@ -38,7 +38,9 @@
                     <button class="btn" id="submit-btn">Use Radar</button>
                     <button class="btn" id="modalBtn">About</button>
                     <br>
-                    <input type="text" class="searchBar" id="" placeholder="Search by City">
+                    <form class="searchForm">
+                        <input type="text" class="searchBar" id="search" placeholder="Search by City">
+                    </form>
                 </div>
                 <!--Results-->
                 <div class="Results" id="showResults"></div>
@@ -56,9 +58,14 @@
                 <br />
             </p>
             <p>
-                Welcome to Food Radar -- an interactive site which allows users to find restaurants in their area. Food Radar uses your longitude and lattitude to find the user's exact location, without the user havng to enter a city name or zip code. When you choose
-                to use the radar, local restaurants in your area will be displayed with some basic information. Users may choose to learn more about any of these local spots by clicking anywhere on the restaurant's display box. By clicking on one of these,
-                the user is transported to yelp.com where he or she can read reviews and make an informed decision about where to eat.
+                Welcome to Food Radar -- an interactive site which allows users to find restaurants in their area. Food
+                Radar uses your longitude and lattitude to find the user's exact location, without the user havng to
+                enter a city name or zip code. When you choose
+                to use the radar, local restaurants in your area will be displayed with some basic information. Users
+                may choose to learn more about any of these local spots by clicking anywhere on the restaurant's display
+                box. By clicking on one of these,
+                the user is transported to yelp.com where he or she can read reviews and make an informed decision about
+                where to eat.
             </p>
         </div>
     </div>
@@ -73,7 +80,7 @@
     </div>
 
     <button onclick="topReturn()" id="topButton" title="Return To The Top">
-      Top
+        Top
     </button>
 
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>

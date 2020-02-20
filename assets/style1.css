@@ -58,8 +58,7 @@ p {
     margin-right: -1.8vh;
 }
 
-.button,
-button {
+.button, button {
     margin-bottom: 1rem;
     margin: 3px;
     border-radius: 10px;
@@ -89,7 +88,6 @@ button {
     cursor: pointer;
 }
 
-
 /* On mouse-over, add a deeper shadow */
 
 .card:hover {
@@ -99,7 +97,6 @@ button {
     -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
 }
-
 
 /* Add some padding inside the card container */
 
@@ -112,8 +109,7 @@ button {
     margin-bottom: -15px;
 }
 
-.half-circle-spinner,
-.half-circle-spinner * {
+.half-circle-spinner, .half-circle-spinner * {
     box-sizing: border-box;
 }
 
@@ -243,10 +239,10 @@ button {
     margin: 15% auto;
     padding: 20px;
     width: 70%;
-    height: 30%;
     border-radius: 10px;
     box-shadow: 0px 4px 9px 2px rgb(209, 209, 209);
     border-bottom: 15px solid rgb(68, 235, 90);
+    max-height: 139%;
 }
 
 .modal-content1 {
@@ -276,15 +272,13 @@ button {
     margin-top: -21px;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
 }
 
-.close1:hover,
-.close1:focus {
+.close1:hover, .close1:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
