@@ -1,10 +1,10 @@
-$("#submit-btn").click(function() {
+$("#submit-btn").click(function () {
     // var ApiKey = "490204d27c988ccb9e991f177de168ad";
     // var requestURL = "https://developers.zomato.com/api/v2.1/geocode";
     var yelpUrl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=food";
 
     if ("geolocation" in navigator) {
-        navigator.geolocation.getCurrentPosition(function(position) {
+        navigator.geolocation.getCurrentPosition(function (position) {
             x = position.coords.latitude;
             y = position.coords.longitude;
             yelpLocation(x, y)
@@ -37,10 +37,10 @@ $("#submit-btn").click(function() {
         $results.html("");
         var businesses = chunk(yelpData.businesses, 3);
         console.log(businesses);
-        businesses.forEach(function(row) {
+        businesses.forEach(function (row) {
             var $row = $('<div>');
             $row.addClass('row');
-            row.forEach(function(business) {
+            row.forEach(function (business) {
                 // console.log(business);
                 var $col = $('<div>');
                 $col.addClass('four columns');
@@ -53,11 +53,13 @@ $("#submit-btn").click(function() {
                 $img.attr("src", business.image_url);
                 $img.attr("alt", business.name);
                 $card.append($img);
-                $img.on('click', function(e) {
+                $img.on('click', function (e) {
                     e.preventDefault();
                     modal1.style.display = "block";
-                    $('#submit-btn1').on('click', function() {
+                    $('#submit-btn1').on('click', function () {
                         window.open(business.url, '_blank');
+                        window.location.reload();
+                        return false;
                     })
                 });
 
@@ -97,25 +99,25 @@ var btn = document.getElementById("modalBtn");
 var modal1 = document.getElementById("myModal1");
 var span = document.getElementsByClassName("close")[0];
 var span1 = document.getElementsByClassName("close1")[0];
-btn.onclick = function() {
+btn.onclick = function () {
     modal.style.display = "block";
 }
 
 
-span.onclick = function() {
+span.onclick = function () {
     modal.style.display = "none";
 }
 
-span1.onclick = function() {
+span1.onclick = function () {
     modal1.style.display = "none";
 }
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
 }
 
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (event.target == modal1) {
         modal1.style.display = "none";
     }
@@ -124,7 +126,7 @@ window.onclick = function(event) {
 
 
 mybutton = document.getElementById("topButton");
-window.onscroll = function() { scrollFunction() };
+window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -147,7 +149,7 @@ function chunk(arr, size) {
     return newArr;
 }
 
-$('.searchForm').on('submit', function(e) {
+$('.searchForm').on('submit', function (e) {
     var inputValue = $('#search').val().trim();
     var searchUrl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=restaurants&location=";
     e.preventDefault();
@@ -167,10 +169,10 @@ function yelpCallSearch(yelpData) {
     $results.html("");
     var businesses = chunk(yelpData.businesses, 3);
     console.log(businesses);
-    businesses.forEach(function(row) {
+    businesses.forEach(function (row) {
         var $row = $('<div>');
         $row.addClass('row');
-        row.forEach(function(business) {
+        row.forEach(function (business) {
             // console.log(business);
             var $col = $('<div>');
             $col.addClass('four columns');
@@ -183,12 +185,14 @@ function yelpCallSearch(yelpData) {
             $img.attr("src", business.image_url);
             $img.attr("alt", business.name);
             $card.append($img);
-            $img.on('click', function(e) {
+            $img.on('click', function (e) {
                 e.preventDefault();
                 modal1.style.display = "block";
-                $('#submit-btn1').on('click', function() {
+                $('#submit-btn1').on('click', function () {
 
                     window.open(business.url, '_blank');
+                    window.location.reload();
+                    return false;
                 })
             });
 
