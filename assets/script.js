@@ -68,9 +68,9 @@ $("#submit-btn").click(function () {
                     e.preventDefault();
                     modal1.style.display = "block";
                     $('#submit-btn1').on('click', function () {
-                        // window.open(business.url, '_blank');
-                        // window.location.reload();
-                        // return false;
+                        window.open(business.url, '_blank');
+                        window.location.reload();
+                        return false;
 
                     })
                 });
